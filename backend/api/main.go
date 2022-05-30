@@ -4,6 +4,8 @@ import (
     "fmt"
     "io/ioutil"
     "net/http"
+
+    "github.com/WRWPhillips/go-pic2text-site/internal"
 )
 
 func uploadFile(w http.ResponseWriter, r *http.Request) {
@@ -44,6 +46,19 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
     tempFile.Write(fileBytes)
     // return that we have successfully uploaded our file!
     fmt.Fprintf(w, "Successfully Uploaded File\n")
+    path := fmt.Sprintf("./backend/temp-images/%+v", handler.Filename)
+    width := r.width
+    height := r.height 
+    palette := r.palette
+    reverse := false
+
+    options := internal.Options{
+        Path: *path,
+        Width: *width,
+        Height: *height,
+        Palette: *palette, 
+        Reverse: *reverse,
+    }
 }
 
 func setupRoutes() {
