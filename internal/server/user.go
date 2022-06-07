@@ -1,10 +1,9 @@
 package server
  
 import (
-  "net/http"
-  "rgb/internal/store"
- 
+  "github.com/WRWPhillips/go-pic2text-site/internal/store"
   "github.com/gin-gonic/gin"
+  "net/http"
 )
  
 func signUp(ctx *gin.Context) {
