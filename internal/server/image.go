@@ -53,7 +53,7 @@ func processFile(ctx *gin.Context) {
 	
 	image := new(store.Image)
 
-	image.Ascii = fmt.Sprintf("%q", &options)
+	image.Ascii = fmt.Sprintf("%s", &options)
 
 	store.Images = append(store.Images, image)
 
