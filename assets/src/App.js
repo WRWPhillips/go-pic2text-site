@@ -25,11 +25,11 @@ function App() {
     >
       <label>
         Name:
-      <input type="string" name="username" />
+      <input type="string" name="Username" />
       </label>
       <label>
-        Name:
-      <input type="password" name="password" />
+        Password:
+      <input type="password" name="Password" />
       </label>
       <input type="submit" value="submit" />
     </form>
@@ -41,11 +41,11 @@ function App() {
     >
       <label>
         Name:
-      <input type="string" name="username" />
+      <input type="string" name="Username" />
       </label>
       <label>
-        Name:
-      <input type="password" name="password" />
+        Password:
+      <input type="password" name="Password" />
       </label>
       <input type="submit" value="submit" />
     </form>
