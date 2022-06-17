@@ -14,9 +14,9 @@
 *.dylib
 
 # Location of temp files used in testing
-backend/temp-images/*.png
-backend/temp-images/*.jpeg
-backend/temp-images/*.jpg
+internal/store/temp-images/*.png
+internal/store/temp-images/*.jpeg
+internal/store/temp-images/*.jpg
 # Test binary, built with `go test -c`
 *.test
 
