@@ -7,6 +7,7 @@ import (
  
   "github.com/WRWPhillips/go-pic2text-site/internal/database"
   "github.com/WRWPhillips/go-pic2text-site/internal/store"
+  "github.com/WRWPhillips/go-pic2text-site/internal/conf"
  
   "github.com/go-pg/migrations/v8"
 )
@@ -27,7 +28,7 @@ func main() {
   flag.Usage = usage
   flag.Parse()
  
-  store.SetDBConnection(database.NewDBOptions())
+  store.SetDBConnection(database.NewDBOptions(conf.newConfig()))
   db := store.GetDBConnection()
  
   oldVersion, newVersion, err := migrations.Run(db, flag.Args()...)

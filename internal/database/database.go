@@ -1,14 +1,16 @@
 package database
  
 import (
+  "github.com/WRWPhillips/go-pic2text-site/internal/conf"
+
   "github.com/go-pg/pg/v10"
 )
  
-func NewDBOptions() *pg.Options {
+func NewDBOptions(config conf.Config) *pg.Options {
   return &pg.Options{
-    Addr:     "localhost:5432",
-    Database: "go_pic2text_site",
-    User:     "postgres",
-    Password: "postgres",
+    Addr:     config.DbHost + ":" + config.DbPort,
+    Database: config.DbName,
+    User:     config.DbUser,
+    Password: config.DbPassword,
   }
 }

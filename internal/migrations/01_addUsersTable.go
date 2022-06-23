@@ -12,7 +12,7 @@ func init() {
     _, err := db.Exec(`CREATE TABLE users(
       id SERIAL PRIMARY KEY,
       username TEXT NOT NULL UNIQUE,
-	  hashed_password BYTEA NOT NULL,
+	    hashed_password BYTEA NOT NULL,
       salt BYTEA NOT NULL,
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
       modified_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
