@@ -13,6 +13,10 @@
 *.so
 *.dylib
 
+# Built go binary inside of cmd/pic2text
+cmd/pic2text/*
+!cmd/pic2text/*.go
+
 # Location of temp files used in testing
 internal/store/temp-images/*.png
 internal/store/temp-images/*.jpeg
