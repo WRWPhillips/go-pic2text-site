@@ -35,7 +35,7 @@ func ConfigureLogger(env string) {
 	switch env {
 	case "dev":
 		stdOutWriter := zerolog.ConsoleWriter{Out: os.Stdout, TimeFormat: "15:04:05.000"}
-		logger := zerolo.New(stdOutWriter).With().TimeStamp().Logger()
+		logger := zerolog.New(stdOutWriter).With().Timestamp().Logger()
 		log.Logger = logger
 	case "prod":
 		createLogDir()

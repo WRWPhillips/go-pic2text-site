@@ -4,6 +4,8 @@ import (
   "flag"
   "fmt"
   "os"
+
+  "github.com/WRWPhillips/go-pic2text-site/internal/logging"
 )
  
 func usage() {

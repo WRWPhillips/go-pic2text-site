@@ -7,7 +7,10 @@ import (
 )
  
 func Start(config conf.Config) {
+  jwtSetup(config)
+  
   store.SetDBConnection(database.NewDBOptions(config))
+  
   router := setRouter()
  
   router.Run(":9000")

@@ -3,6 +3,7 @@ package server
 import (
   "github.com/WRWPhillips/go-pic2text-site/internal/store"
   "github.com/gin-gonic/gin"
+  
   "net/http"
 )
  
@@ -18,7 +19,7 @@ func signUp(ctx *gin.Context) {
   }
   ctx.JSON(http.StatusOK, gin.H{
     "msg": "Signed up successfully.",
-    "jwt": "123456789",
+    "jwt": generateJWT(user),
   })
 }
  
@@ -36,6 +37,6 @@ func signIn(ctx *gin.Context) {
  
   ctx.JSON(http.StatusOK, gin.H{
     "msg": "Signed in successfully.",
-    "jwt": "123456789",
+    "jwt": generateJWT(user),
   })
 }

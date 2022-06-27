@@ -5,6 +5,8 @@ import (
   "time"
   "errors"
 
+  // "github.com/go-pg/pg/v10"
+	"github.com/rs/zerolog/log"
   "golang.org/x/crypto/bcrypt"
 )
 
