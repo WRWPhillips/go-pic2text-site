@@ -13,8 +13,8 @@ const (
 	dbNameKey = "DB_NAME"
 	dbUserKey = "DB_USER"
 	dbPasswordKey = "DB_PASSWORD"
-	hostKey = "HOST"
-	portKey = "PORT"
+	hostKey = "PIC2TEXT_HOST"
+	portKey = "PIC2TEXT_PORT"
 	jwtSecretKey = "JWT_SECRET"
 )
 
