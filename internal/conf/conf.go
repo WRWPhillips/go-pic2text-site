@@ -14,6 +14,7 @@ const (
 	dbPasswordKey = "DB_PASSWORD"
 	hostKey = "HOST"
 	portKey = "PORT"
+	jwtSecretKey = "JWT_SECRET"
 )
 
 type Config struct {
@@ -24,6 +25,7 @@ type Config struct {
 	DbPassword string 
 	Host string 
 	Port string 
+	JwtSecret string 
 }
 
 func NewConfig() Config {
@@ -65,6 +67,11 @@ func NewConfig() Config {
 	if !ok || dbPassword == "" {
 		logAndPanic(dbPasswordKey)
 	}
+
+	jwtSecret, ok := os.LookupEnv(jwtSecretKey)
+	if !ok || jwtSecret == "" {
+		logAndPanic(jwtSecretKey)
+	}
  
 	return Config{
 		Host:       host,
@@ -74,10 +81,11 @@ func NewConfig() Config {
 		DbName:     dbName,
 		DbUser:     dbUser,
 		DbPassword: dbPassword,
+		JwtSecret:  jwtSecret,
 	}
 }
 
 func logAndPanic(envVar string) {
-	log.Println("ENV variable not set or value not valid: ", envVar)
+	log.Panic().Str("envVar", envVar).("ENV variable not set or value not valid: ", envVar)
 	panic(envVar)
 }
