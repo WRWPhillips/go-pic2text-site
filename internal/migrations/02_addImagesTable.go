@@ -12,6 +12,7 @@ func init() {
 		_, err := db.Exec(`CREATE TABLE images(
 			id SERIAL PRIMARY KEY,
 			title TEXT NOT NULL,
+			description TEXT NOT NULL,
 			ascii TEXT NOT NULL,
 			created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
 			modified_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),

@@ -11,13 +11,14 @@ import (
 )
 
 type User struct {
-  ID       int
-  Username string `binding:"required,min=5,max=30"`
-  Password string `pg:"-" binding:"required,min=7,max=32"`
+  ID             int
+  Username       string `binding:"required,min=5,max=30"`
+  Password       string `pg:"-" binding:"required,min=7,max=32"`
   HashedPassword []byte `json:"-"`
-  Salt []byte `json:"-"`
-  CreatedAt  time.Time
-  ModifiedAt time.Time
+  Salt           []byte `json:"-"`
+  CreatedAt      time.Time
+  ModifiedAt     time.Time
+  Images         []*Image `json:"-" pg:"fk:user_id,rel:has-many,on_delete:CASCADE"`
 }
  
 func AddUser(user *User) error {
