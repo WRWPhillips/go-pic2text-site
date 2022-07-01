@@ -8,6 +8,8 @@ import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
+import Header from './components/Header';
+
 
 // const store = createStore(rootReducers, applyMiddleware(thunk));
 // window.store = store; //remove before complete deployment, here for development
@@ -19,6 +21,7 @@ root.render(
   
     <Router>
       <React.StrictMode>
+        <Header />
         <App />
       </React.StrictMode>
     </Router>
