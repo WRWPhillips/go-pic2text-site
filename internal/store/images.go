@@ -3,13 +3,13 @@ package store
 import "time"
 
 type Image struct {
-	ID         int 
-	Title      string `binding:"required,min=3,max=50"`
-	Title      string `binding:"required,min=3,max=50"`
-	Ascii      string
-	CreatedAt  time.Time
-    ModifiedAt time.Time
-    UserID     int `json:"-"`
+	ID          int 
+	Title       string `binding:"required,min=3,max=50"`
+	Description string `binding:"required,min=3,max=50"`
+	Ascii       string
+	CreatedAt   time.Time
+    ModifiedAt  time.Time
+    UserID      int `json:"-"`
 }
 
 func AddImage(user *User, image *Image) error {
